@@ -1,0 +1,386 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="author" content="">
+    <title>GuianApp</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../SinglePage/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Google Web Font -->
+    <!--<link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet">-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS-->
+    <link href="../../SinglePage/css/general.css" rel="stylesheet">
+
+    <!-- Owl-Carousel -->
+    <link href="../../SinglePage/css/custom.css" rel="stylesheet">
+    <link href="../../SinglePage/css/owl.carousel.css" rel="stylesheet">
+    <link href="../../SinglePage/css/owl.theme.css" rel="stylesheet">
+    <link href="../../SinglePage/css/style.css" rel="stylesheet">
+    <link href="../../SinglePage/css/animate.css" rel="stylesheet">
+
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="../../SinglePage/css/magnific-popup.css">
+
+    <script src="../../SinglePage/js/modernizr-2.8.3.min.js"></script>
+
+    <!--Imagenes CON FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+</head>
+<body id="home">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+
+    <!-- FullScreen -->
+    <div class="intro-header">
+        <div class="col-xs-12 text-center abcen1">
+            <h1 class="h1_home wow fadeIn" data-wow-delay="0.4s">GuianApp</h1>
+            <h3 class="h3_home wow fadeIn" data-wow-delay="0.6s">Aplicación turistica de lectura por QR</h3>
+            <ul class="list-inline intro-social-buttons">
+                <li id="download">
+                    <a href="#downloadlink" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.8s"><span class="network-name">Descarga la aplicación!</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.container -->
+        <div class="col-xs-12 text-center abcen wow fadeIn">
+            <div class="button_down ">
+                <a class="imgcircle wow bounceInUp" data-wow-duration="1.5s" href="#whatis"> <img id="mycircle" src="" class="img_scroll" alt=""> </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NavBar-->
+    <nav class="navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#home">GuianApp</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="menuItem"><a href="#whatis">¿Qué es GuianApp?</a></li>
+                    <li class="menuItem"><a href="#useit">Lectura QR</a></li>
+                    <li class="menuItem"><a href="#screen">La Aplicación</a></li>
+                    <li class="menuItem"><a href="#act">Actualizaciones</a></li>
+                    <li class="menuItem"><a href="#contact">Contáctanos</a></li>
+                    <li class="menuItem"><a onclick="Session()">Iniciar sesión</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- What is -->
+    <div id="whatis" class="content-section-b" style="border-top: 0">
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3 text-center wrap_title">
+                <h2>¿Qué es GuianApp?</h2>
+                <p class="lead" style="margin-top:0">GuianApp es una aplicación movil que brinda información turística</p>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 wow fadeInDown text-center">
+                    <img id="mymap" src="" class="rotate" alt="Generic placeholder image">
+                    <h3>Detectar lugares de interés</h3>
+                    <p class="lead">Podrás saber si existe un lugar de interés cercano, la aplicacion te enviará una notificación.</p>
+                </div>
+
+                <div class="col-sm-4 wow fadeInDown text-center">
+                    <img id="myaudio" class="rotate" width="115" height="115" alt="Generic placeholder image">
+                    <h3>AudioGuia</h3>
+                    <p class="lead">Podrás escuchar la información mientras paseas por los atractivos turisticos.</p>
+                </div>
+
+                <div class="col-sm-4 wow fadeInDown text-center">
+                    <img id="mymachu" class="rotate" width="130" height="130" alt="Generic placeholder image">
+                    <h3>Turismo</h3>
+                    <p class="lead">Podrás ver los tours de la ciudad, sus horarios de disponibilidad, sus precios y sus rutas.</p>
+                </div>
+
+            </div><!-- /.row -->
+
+            <div class="row tworow">
+
+                <div class="col-sm-4  wow fadeInDown text-center">
+                    <img id="myiphone" class="rotate" width="87" height="150" alt="Generic placeholder image">
+                    <h3>Historia</h3>
+                    <p class="lead">Podrás leer la historia de los atractivos turisticos con esta aplicación.</p>
+                </div>
+
+                <div class="col-sm-4 wow fadeInDown text-center">
+                    <img id="myshare" class="rotate" width="125" height="125" alt="Generic placeholder image">
+                    <h3>Compartir</h3>
+                    <p class="lead">Podrás compartir con la comunidad tus lugares preferidos o rutas que todos deberian visitar</p>
+                </div>
+
+                <div class="col-sm-4 wow fadeInDown text-center">
+                    <img id="myoffline" class="rotate" width="130" height="130" alt="Generic placeholder image">
+                    <h3>Offline</h3>
+                    <p class="lead">Podrás descargarte las guias necesarias para lugares donde no llegue el internet y disfrutar asi del viaje</p>
+                </div>
+
+            </div><!-- /.row -->
+        </div>
+    </div>
+
+    <!-- Use it -->
+    <div id="useit" class="content-section-a">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-6 pull-right wow fadeInRightBig">
+                    <img id="myqr" class="img-responsive" alt="">
+                </div>
+
+                <div class="col-sm-6 wow fadeInLeftBig" data-animation-delay="200">
+                    <h3 class="section-heading">Lectura QR</h3>
+                    <p class="lead">
+                        Su funcionamiento se basa en la ubicación junto a los lugares de interés de tu localidad,
+                        de una pequeña placa que muestra el nombre del lugar, un código QR y una dirección web
+                        (un sitio web diseñado especialmente para móviles, liviano, ágil y accesible).
+                    </p>
+                    <p>
+                        <a class="btn btn-embossed btn-primary" href="#" role="button">Ver Detalles</a>
+                        <a class="btn btn-embossed btn-info" href="#" role="button">Visitar Sitio Web</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <div class="content-section-b">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeftBig">
+                    <div id="owl-demo-1" class="owl-carousel">
+                        <div class="item">
+                            <img id="mymachu2" class="img-responsive img-rounded" alt="">
+                        </div>
+                        <div class="item">
+                            <img id="mycoliseo" class="img-responsive img-rounded" alt="">
+                        </div>
+                        <div class="item">
+                            <img id="mypisa" class="img-responsive img-rounded" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
+                    <h3 class="section-heading">Maravillas del Mundo</h3>
+                    <div class="sub-title lead3">Tenemos toda la información de las maravillas del mundo</div>
+                    <p class="lead">
+                        GuianApp te ofrece los monumentos más importantes del mundo.
+                        Al escanear el código QR, que se encuentra en estos lugares, observaras
+                        un texto descriptivo del lugar visitado, una locución que guía al visitante en la contemplación del lugar,
+                        una galería de fotos, vídeos, etc.
+                    </p>
+                    <p>
+                        <a class="btn btn-embossed btn-primary" href="#" role="button">Ver Detalles</a>
+                        <a class="btn btn-embossed btn-info" href="#" role="button">Visitar Sitio Web</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Screenshot -->
+    <div id="screen" class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
+                    <h2>La Aplicación</h2>
+                    <p class="lead" style="margin-top:0">Algunas capturas de la aplicación</p>
+                </div>
+            </div>
+            <div class="row wow bounceInUp">
+                <div id="owl-demo" class="owl-carousel">
+
+                    <div class="item">
+                        <img id="myslide1" class="img-responsive img-rounded" alt="Owl Image">
+                    </div>
+
+                    <div class="item">
+                        <img id="myslide2" class="img-responsive img-rounded" alt="Owl Image">
+                    </div>
+
+                    <div class="item">
+                        <img id="myslide3" class="img-responsive img-rounded" alt="Owl Image">
+                    </div>
+
+                    <div class="item">
+                        <img id="myslide4" class="img-responsive img-rounded" alt="Owl Image">
+                    </div>
+
+                    <div class="item">
+                        <img id="myslide5" class="img-responsive img-rounded" alt="Owl Image">
+                    </div>
+
+                    <div class="item">
+                        <img id="myslide6" class="img-responsive img-rounded" alt="Owl Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="act" class="content-section-a">
+        <div class="content-section-c ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center white">
+                        <h2>Actualizaciones constantes</h2>
+                        <p class="lead" style="margin-top:0">Mejoramos para ofrecer la máxima experiencia de navegación, y la información mas reciente</p>
+                    </div>
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <div class="mockup-content">
+                            <div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1">
+                                <button type="button "><span>Subscribe to our Newsletter</span></button>
+                                <div class="morph-content">
+                                    <div>
+                                        <div class="content-style-form content-style-form-4 ">
+                                            <h2 class="morph-clone">Descargarla YA!!!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>>
+            </div>
+        </div>
+    </div>
+    <!-- Contact -->
+    <div id="contact" class="content-section-a">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 col-md-offset-3 text-center wrap_title">
+                    <h2>Contáctanos</h2>
+                    <p class="lead" style="margin-top:0">Envía tus sugerencias y opiniones</p>
+                </div>
+
+                <form role="form" action="" method="post">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="InputName">Nombre</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Ingresa tu nombre" required>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="InputEmail">Correo</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Ingresa tu Correo" required>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="InputMessage">Mensaje</label>
+                            <div class="input-group">
+                                <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                            </div>
+                        </div>
+                        <input type="submit" name="submit" id="submit" value="Enviar" class="btn wow tada btn-embossed btn-primary pull-right">
+                    </div>
+                </form>
+
+                <hr class="featurette-divider hidden-lg">
+                <div class="col-md-5 col-md-push-1 address">
+                    <address>
+                        <h3>Dónde estamos</h3>
+                        <p class="lead">
+                            <a href="https://www.google.com/maps/preview?ie=UTF-8&q=The+Pentagon&fb=1&gl=us&hq=1400+Defense+Pentagon+Washington,+DC+20301-1400&cid=12647181945379443503&ei=qmYfU4H8LoL2oATa0IHIBg&ved=0CKwBEPwSMAo&safe=on">
+                                Area 51<br>
+                                San Juan de Lurigancho, DC 20301
+                            </a><br>
+                            Telf: 930-232-222<br>
+                            Fax: 111-222-3333
+                        </p>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h3 class="footer-title">Proyecto GuianApp</h3>
+                    <p>
+                        UPC - Aplicaciones Para Dispositivos Móviles (CC75-1602-WX71) <b>2016-02</b><br />
+                        Profesor: <a href="https://pe.linkedin.com/in/avelasquezn" target="_blank">Velasquez Nuñez, Angel Augusto</a><br />
+                        Correo: <a href="https://pe.linkedin.com/in/avelasquezn" target="_blank">PCISAVEL@upc.edu.pe </a><br />
+                        ------------------------------------------<br />
+                        Version: 1.0
+                    </p>
+
+                </div> <!-- /col-xs-7 -->
+                <div class="col-md-5">
+                    <div class="footer-banner">
+                        <h3 class="footer-title">Integrantes:</h3>
+                        <ul>
+                            <li><a href="https://www.facebook.com/davidzilvazolano11">David Silva Solano</a></li>
+                            <li><a href="https://www.facebook.com/ulices.melendezacosta?fref=ts">Ulices Meléndez Acosta</a></li>
+                            <li><a href="https://www.facebook.com/alex.espino.587?fref=ts">Alex espino</a></li>
+                            <li><a href="https://www.facebook.com/delacroix.van.cleef?fref=ts">Vincenzo Greggio</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="../../SinglePage/js/jquery-1.10.2.js"></script>
+    <script src="../../SinglePage/js/bootstrap.js"></script>
+    <script src="../../SinglePage/js/owl.carousel.js"></script>
+    <script src="../../SinglePage/js/script.js"></script>
+    <!-- StikyMenu -->
+    <script src="../../SinglePage/js/stickUp.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.navbar-default').stickUp();
+
+            });
+        });
+
+    </script>
+    <!-- Smoothscroll -->
+    <script type="text/javascript" src="../../SinglePage/js/jquery.corner.js"></script>
+    <script src="../../SinglePage/js/wow.min.js"></script>
+
+    <!--DONLUSHO-->
+    <script src="../../db/Access.js"></script>
+    <script src="../../Scripts/ImgFireBase.js"></script>
+    <script src="../../Controllers/Principal.js"></script>
+
+    <!--DONLUSHO-->
+    <script>
+        new WOW().init();
+    </script>
+    <script src="../../SinglePage/js/classie.js"></script>
+    <script src="../../SinglePage/js/uiMorphingButton_inflow.js"></script>
+    <!-- Magnific Popup core JS file -->
+    <script src="../../SinglePage/js/jquery.magnific-popup.js"></script>
+</body>
+</html>

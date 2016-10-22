@@ -1,0 +1,67 @@
+﻿@model GuianClient.ViewModel.AdminVM.LstEnterprisesVM
+@{
+    ViewBag.Title = "LstEnterprises";
+    ViewBag.Section = "LstEnterprises";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
+    string estado;
+}
+
+
+<form role="form" method="post" action="@Url.Action("LstEnterprises")">
+    <div class="x_panel">
+        <div class="x_title">
+            <div class="title_left">
+                <h2>Lista de Lugares</h2>
+            </div>
+            <div class="title_right">
+                <div class="col-md-4 col-sm-4 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                        @Html.TextBoxFor(x => x.Filtro, new { @class = "form-control", @type = "text", @placeholder = "Estado(PEN o ACT)" })
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>category</th>
+                        <th>email</th>
+                        <th>enterpriseID</th>
+                        <th>name</th>
+                        <th>password</th>
+                        <th>RUC</th>
+                        <th>status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.lstEnterprises)
+                    {
+                        <tr>
+                            <td>@item.category</td>
+                            <td>@item.email</td>
+                            <td>@item.enterpriseID</td>
+                            <td>@item.name</td>
+                            <td>@item.password</td>
+                            <td>@item.RUC</td>
+                            <td>@item.status</td>
+                            NO VAMOS AGREGAR NI EDITAR SOLO UN BOTON Q CAMBIE ESTADO OKKKKKK
+                            <td>
+                                @{
+                                    estado = item.status == "PEN"||item.status=="DES" ? "Activar" : "Desactivar";
+                                }
+                                <a class="btn btn-default" href="@Url.Action("ActDesEnterprise",new{ enterpriseID = item.enterpriseID,status=item.status })">
+                                    <i class="fa fa-edit"></i>@estado
+                                </a>
+                            </td>
+                        </tr>
+                                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>

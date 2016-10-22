@@ -1,0 +1,69 @@
+﻿@model GuianClient.ViewModel.AdminVM.LstPlacesVM
+@{
+    ViewBag.Title = "LstPlaces";
+    ViewBag.Section = "LstPlaces";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
+}
+
+<form role="form" method="post" action="@Url.Action("LstPlaces")">
+    <div class="x_panel">
+        <div class="x_title">
+            <div class="title_left">
+                <h2>Lista de Lugares</h2>
+            </div>
+            <div class="title_right">
+                <div class="col-md-4 col-sm-4 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                        @Html.TextBoxFor(x => x.Filtro, new { @class = "form-control", @type = "text", @placeholder = "Ciudades a buscar" })
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Audio</th>
+                        <th>CityID</th>
+                        <th>Description</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                        <th>Name</th>
+                        <th>PlaceID</th>
+                        <th>Visits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.lstPlaces)
+                    {
+                        <tr>
+                            <td>@item.audio</td>
+                            <td>@item.cityID</td>
+                            <td>@item.description</td>
+                            <td>@item.latitud</td>
+                            <td>@item.longitud</td>
+                            <td>@item.name</td>
+                            <td>@item.placeID</td>
+                            <td>@item.visits</td>
+                            <td>
+                                <a class="btn btn-default" href="@Url.Action("AddEditPlace",new{ PlaceID = item.placeID })">
+                                    <i class="fa fa-edit"></i> Editar
+                                </a>
+                            </td>
+                            <td>
+                                <a class="btn btn-default" href="@Url.Action("DeletePlace",new{ PlaceID = item.placeID })">
+                                    <i class="fa fa-remove"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a class="btn btn-primary" href="@Url.Action("AddEditPlace")"><i class="fa fa-plus"></i> Agregar</a>
+        </div>
+    </div>
+</form>

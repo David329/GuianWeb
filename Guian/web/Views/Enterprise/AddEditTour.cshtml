@@ -1,0 +1,91 @@
+﻿@model GuianClient.ViewModel.EnterpriseVM.AddEditTourVM
+@{
+    ViewBag.Title = "AddEditTour";
+    ViewBag.SubTitle = "Agregar/Editar";
+    ViewBag.Section = "LstTours";
+    Layout = "~/Views/Layout/_EnterpriseLayout.cshtml";
+}
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Perfil de Tour</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                    <div class="profile_img">
+                        <div id="crop-avatar">
+                            <!-- Current avatar AKA EN              src=objview.obj.logo-->
+                            <img class="img-responsive avatar-view" src="~/Content/images/user.png" alt="Avatar" title="Change the avatar">
+                        </div>
+                        <h3>@Model.objTour.name</h3>
+                        <br />
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="x_panel">
+                        <div class="profile_title">
+                            <div class="col-md-6">
+                                <h2>Mis Datos</h2>
+                            </div>
+                        </div>
+                        <div class="x_content">
+                            <form class="form-horizontal form-label-left" enctype="multipart/form-data" novalidate method="post" action="@Url.Action("AddEditTour")">
+                                @Html.HiddenFor(x => x.objTour.tourID)
+                                <span class="section">Información Personal</span>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">
+                                        Nombre: <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.TextBoxFor(x => x.objTour.name, new { @type = "text", @id = "nombre", @name = "nombre", @required = "required", @class = "form-control col-md-7 col-xs-12" })
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="costo">
+                                        Costo: <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.TextBoxFor(x => x.objTour.cost, new { @type = "text", @id = "costo", @name = "costo", @required = "required", @class = "form-control col-md-7 col-xs-12" })
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="imagen">
+                                        Link de la Imagen del tour: <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.TextBoxFor(x => x.objTour.logo, new { @type = "text", @id = "imagen", @name = "imagen", @required = "required", @class = "form-control col-md-7 col-xs-12" })
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="descripcion">
+                                        Descripcion: <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @Html.TextAreaFor(x => x.objTour.description, new { @type = "text",@rows=5,@cols=50, @id = "descripcion", @name = "descripcion", @required = "required", @class = "form-control col-md-7 col-xs-12" })
+                                    </div>
+                                </div>
+                          <!--      <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="imagen">
+                                        Imagen: <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        Html.TextBoxFor(x => x.Img, new { type = "file", name = "Img" }) //colocar los arroba a esto weyes
+                                    </div>
+                                </div>
+-->
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <button id="enviar" type="submit" class="btn btn-success"><i class="fa fa-save"></i> Procesar</button>
+                                        <a class="btn btn-primary" href="@Url.Action("LstTours")"><i class="fa fa-close"></i> Cancelar</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
